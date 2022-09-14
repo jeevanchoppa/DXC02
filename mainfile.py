@@ -1,6 +1,4 @@
 
-
-
 def create():
     import sqlite3
     con = sqlite3.connect('StudDetails01.db')
@@ -47,5 +45,27 @@ def update (RollNo, MathMarks):
 def delete (RollNo):
     RollNo = input("Enter RollNo which you want to delete = ")
     data = cur.execute('''delete from StudDetails01 where RollNo = ?''', (RollNo, ))
-    con.commit()
+    con.commit() 
     con.close()
+
+choice = 9
+while (choice != 0):
+    print("Enter 1 to Create Table :")
+    print("Enter 2 for INSERT :")
+    print("Enter 3 for FETCH : ")
+    print("Enter 4 for UPDATE :")
+    print("Enter 5 for DELETE :")
+    print(" ")
+    print("Enter 0 to EXIT ")
+    print(" ")
+    choice = int(input('Enter your Choice : '))
+    if choice == 1:
+        print(create())
+    if choice == 2:
+        print(insert('val1', 'val2', 'val3', 'val4', 'val5'))
+    elif choice == 3:
+        print(fetch ())
+    elif choice == 4:
+        print(update('RollNo', 'MathMarks'))
+    elif choice == 5:
+        print(delete('RollNo'))
