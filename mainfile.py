@@ -8,14 +8,14 @@ def create():
     con.commit()
     print("Table successfully created")
 
-def insert(RollNo, StudName, PhyMarks, CheMarks, MathMarks)
+def insert(RollNo, StudName, PhyMarks, CheMarks, MathMarks):
 
     RollNo = input("Enter RollNo = ")
     StudName = input("Enter Student Name = ")
     PhyMarks = input("Enter Phy Marks = ")
     CheMarks = input("Enter Che Marks = ")
     MathMarks = input("Enter Math Marks = ")
-    cur.execute('''INSERT INTO StudDetails01 (RollNo, StudName, PhyMarks, CheMarks, MathMarks) VALUES(?,?,?,?,?)''', (RollNo, StudName, PhyMarks, CheMarks, MathMarks))
+    data = cur.execute('''INSERT INTO StudDetails01 (RollNo, StudName, PhyMarks, CheMarks, MathMarks) VALUES(?,?,?,?,?)''', (RollNo, StudName, PhyMarks, CheMarks, MathMarks))
     con.commit()    
 
 def fetch ():
